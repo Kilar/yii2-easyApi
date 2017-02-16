@@ -2,6 +2,11 @@
 namespace backend\controllers;
 
 use yii\db\BaseActiveRecord;
+/**
+ *
+ * @author Yong
+ *
+ */
 class BaseController extends \yii\web\Controller
 {
     public $layout='app';

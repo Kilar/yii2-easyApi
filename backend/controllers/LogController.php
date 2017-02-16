@@ -4,6 +4,11 @@ namespace backend\controllers;
 use backend\models\LoginLog;
 use backend\models\OperationLog;
 use backend\service\LogService;
+/**
+ *
+ * @author Yong
+ *
+ */
 class LogController extends BaseController
 {
     /**

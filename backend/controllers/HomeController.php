@@ -9,6 +9,11 @@ use yii\filters\AccessControl;
 use backend\service\HomeService;
 use backend\service\LogService;
 use backend\models\OperationLog;
+/**
+ * 
+ * @author Yong
+ *
+ */
 class HomeController extends BaseController
 {
     /**

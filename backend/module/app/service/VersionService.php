@@ -6,6 +6,11 @@ use common\models\AppVersionRecord;
 use backend\service\LogService;
 use backend\models\OperationLog;
 use yii\helpers\Json;
+/**
+ *
+ * @author Yong
+ *
+ */
 class VersionService extends BaseService 
 {
     /**

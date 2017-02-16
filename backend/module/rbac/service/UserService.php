@@ -13,6 +13,11 @@ use yii\web\ServerErrorHttpException;
 use backend\models\OperationLog;
 use yii\helpers\Json;
 use backend\service\LogService;
+/**
+ *
+ * @author Yong
+ *
+ */
 class UserService extends BaseService
 {
     /**

@@ -4,6 +4,11 @@ namespace backend\service ;
 use Yii;
 use backend\models\LoginForm;
 use backend\module\rbac\service\MenuService;
+/**
+ *
+ * @author Yong
+ *
+ */
 class HomeService  extends BaseService 
 {
     /**

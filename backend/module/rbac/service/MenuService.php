@@ -13,6 +13,11 @@ use yii\web\ServerErrorHttpException;
 use backend\module\rbac\models\AuthMenu;
 use backend\module\rbac\models\AuthItem;
 use backend\service\LogService;
+/**
+ *
+ * @author Yong
+ *
+ */
 class MenuService extends BaseService
 {
    /**

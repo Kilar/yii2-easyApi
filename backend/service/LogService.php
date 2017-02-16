@@ -10,6 +10,11 @@ use backend\models\OperationLog;
 use yii\web\ForbiddenHttpException;
 use backend\module\rbac\service\UserService;
 use yii\web\ServerErrorHttpException;
+/**
+ *
+ * @author Yong
+ *
+ */
 class LogService extends BaseService
 {
     /**

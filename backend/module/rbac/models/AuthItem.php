@@ -36,6 +36,10 @@ class AuthItem extends BaseActiveRecord
         return '{{%auth_item}}';
     }
 
+    /**
+     * {@inheritDoc}
+     * @see \yii\db\BaseActiveRecord::fields()
+     */
     public function fields()
     {
         $fields = parent::fields();
