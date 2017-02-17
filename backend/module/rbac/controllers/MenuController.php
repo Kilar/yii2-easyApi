@@ -9,6 +9,11 @@ use yii\web\NotFoundHttpException;
 use backend\controllers\BaseController;
 use backend\module\rbac\models\AuthMenu;
 use backend\module\rbac\service\MenuService;
+/**
+ * 菜单列表管理模块
+ * @author Yong
+ *
+ */
 class  MenuController extends BaseController
 {
     /**

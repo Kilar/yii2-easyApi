@@ -10,6 +10,11 @@ use yii\web\NotFoundHttpException;
 use backend\controllers\BaseController;
 use backend\module\rbac\models\AuthItem;
 use backend\module\rbac\service\UserService;
+/**
+ * 后台用户列表管理模块
+ * @author Yong
+ *
+ */
 class  UserController extends BaseController
 {
     /**

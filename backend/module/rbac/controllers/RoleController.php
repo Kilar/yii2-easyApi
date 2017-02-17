@@ -9,6 +9,11 @@ use yii\web\NotFoundHttpException;
 use backend\controllers\BaseController;
 use backend\module\rbac\models\AuthItem;
 use backend\module\rbac\service\RoleService;
+/**
+ * 角色列表管理模块
+ * @author Yong
+ *
+ */
 class  RoleController extends BaseController
 {
     /**

@@ -11,7 +11,7 @@ use common\models\AppVersionRecordSh;
 use yii\web\NotFoundHttpException;
 use backend\module\app\service\VersionService;
 /**
- * Default controller for the `api` module
+ * app客户端版本列表管理模块
  * @author yong
  */
 class VersionController extends BaseController

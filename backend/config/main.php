@@ -22,8 +22,9 @@ return [
             'loginUrl' => ['home/login'],
             'returnUrl' => '/',
             'check' => true,
-            'authTimeout' => 7200,
+            'authTimeout' => 7200, //两小时内没有操作会退出
             'admin' => [ 'admin' ], //超级用户角色ID
+           //用户session跨域设置
 //             'enableAutoLogin' => true,
 //             'identityCookie' => [
 //                 'name' => '_identity-backend', 
@@ -50,9 +51,6 @@ return [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
             'cache' => 'cache',
-            'defaultRoles' => [
-                'admin'
-            ],
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
