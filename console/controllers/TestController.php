@@ -41,39 +41,49 @@ class TestController extends Controller
         die("\n");
     }
     
-    function my_sort($a,$b)
-    {
-        echo 'dddd';
-        if ($a==$b) return 0;
-        return ($a<$b)?-1:1;
-    }
-    
+ 
     public function actionTest()
     {
-        $person =  array(
-            array('id'=>1,'name'=>'fj','weight'=>100,'height'=>180),
-            array('id'=>2,'name'=>'tom','weight'=>53,'height'=>150),
-            array('id'=>3,'name'=>'jerry','weight'=>120,'height'=>156),
-            array('id'=>4,'name'=>'bill','weight'=>110,'height'=>190),
-            array('id'=>5,'name'=>'linken','weight'=>80,'height'=>200),
-            array('id'=>6,'name'=>'madana','weight'=>95,'height'=>110),
-            array('id'=>7,'name'=>'jordan','weight'=>70,'height'=>170),
-            array('id'=>8,'name'=>'fj1','weight'=>1001,'height'=>180),
-            array('id'=>9,'name'=>'tom1','weight'=>531,'height'=>150),
-            array('id'=>10,'name'=>'jerry1','weight'=>1201,'height'=>156),
-            array('id'=>11,'name'=>'bill1','weight'=>1101,'height'=>190),
-            array('id'=>12,'name'=>'linken1','weight'=>801,'height'=>200),
-            array('id'=>13,'name'=>'madana1','weight'=>951,'height'=>110),
-            array('id'=>14,'name'=>'jordan1','weight'=>701,'height'=>170),
-        );
-        usort($person, function($a, $b){
-            if ($a['weight']==$b['weight']) return 0;
-            return ($a['weight']>$b['weight']?-1:1);
-        });
-        print_r(strnatcmp('9', '1'));die;
+        $this->daemon(function($args){  
+          //do something 
+          echo $args;
+        }, "\n",2);
     }
     
+    function daemon($func_name,$args,$number){
+        while(true){
+            $pid=pcntl_fork();
+            echo "$pid\n";
+            if($pid==-1){
+                echo "fork process fail";
+                exit();
+            }elseif($pid){//创建的子进程
+                static $num=0;
+                $num++;
+                if($num>=$number){
+                    //当进程数量达到一定数量时候，就对子进程进行回收。
+                    pcntl_wait($status);
     
+                    $num--;
+                }
+            }else{ //为0 则代表是子进程创建的，则直接进入工作状态
+    
+//                 if($func_name){
+//                     while (true) {
+//                         $ppid=posix_getpid();
+//                         var_dump($ppid);
+//                         call_user_func($func_name,$args);
+//                         sleep(2);
+//                         break;
+//                     }
+//                 }else{
+//                     echo "function is not exists";
+//                 }
+            }
+        }
+        
+        echo microtime(1)."\n";
+    }
    
     
     

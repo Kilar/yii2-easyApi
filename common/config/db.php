@@ -7,9 +7,10 @@ return  [
         'username' => SysHelper::getEnv('db_username', 'root'),
         'password' => SysHelper::getEnv('db_password', ''),
         'tablePrefix' => SysHelper::getEnv('db_tablePrefix', ''),
+        'enableSchemaCache' => SysHelper::getEnv('db_enableSchemaCache', true), // 缓存表结构
     ],
     'redis' => [
-        'class' => 'yii\redis\Connection',
+        'class' => '\common\lib\components\RedisConnection',
         'hostname' => SysHelper::getEnv('redis_hostname', 'localhost'),
         'port' => SysHelper::getEnv('redis_port', '6379'),
         'database' => SysHelper::getEnv('redis_database', 0),

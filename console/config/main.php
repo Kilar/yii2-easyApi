@@ -16,7 +16,11 @@ return [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
+                    'maxLogFiles' => 20, // 最多20个日志文件
+                    'maxFileSize' => 1024 * 100, // 最多100M
                     'levels' => ['error', 'warning'],
+                    'logFile' => '@runtime/logs/'.date('Y-m-d').'.log',
+                    'logVars' => ['_GET', '_POST', '_FILES', '_COOKIE', '_SESSION'],
                 ],
             ],
         ],
