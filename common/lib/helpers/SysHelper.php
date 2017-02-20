@@ -82,6 +82,14 @@ class SysHelper
     public static function getEnv(string $varName, string $default = null)
     {
         $val = getenv($varName);
+        
+        switch ($val) {
+            case 'false':
+                return false;
+            case 'true':
+                return true;
+        }
+        
         return $val ? $val : $default;
     }
 

@@ -12,6 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use common\lib\helpers\Common;
 
 /**
  * Site controller
@@ -72,6 +73,25 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+//         ignore_user_abort(true); // 忽略客户端断开
+//         set_time_limit(10);    // 设置执行不超时
+
+        file_put_contents('/project/test/123.log', "qqqqqqqqqqqqqqqqqqqqqqqqqqqq\n", FILE_APPEND);
+        
+        sleep(10);
+        
+        $i = 0;
+        while (true) {
+            $i++;
+            file_put_contents('/project/test/123.log', "$i\n", FILE_APPEND);
+            sleep(3);
+            if ($i === 20) {
+                die;
+            }
+        }
+        
+        
+        
         return $this->render('index');
     }
 

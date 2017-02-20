@@ -84,7 +84,14 @@ class TestController extends Controller
         
         echo microtime(1)."\n";
     }
-   
+    public function actionCurl()
+    {
+        $ch = curl_init('http://yii.ee/site/index');
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_exec($ch);
+        curl_close($ch);
+        exit(0);
+    }
     
     
 }
